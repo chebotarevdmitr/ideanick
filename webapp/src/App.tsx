@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite1 + React2</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+interface Idea {
+  nick: string;
+  name: string;
+  description: string;
 }
 
-export default App
+export const App: React.FC = () => {
+  const ideas: Idea[] = [
+    {
+      nick: "cool-idea-nick-1",
+      name: "idea 1",
+      description: "Description of idea 1...",
+    },
+    {
+      nick: "cool-idea-nick-2",
+      name: "idea 2",
+      description: "Description of idea 2...",
+    },
+    {
+      nick: "cool-idea-nick-3",
+      name: "idea 3",
+      description: "Description of idea 3...",
+    },
+    {
+      nick: "cool-idea-nick-4",
+      name: "idea 4",
+      description: "Description of idea 4...",
+    },
+    {
+      nick: "cool-idea-nick-5",
+      name: "idea 5",
+      description: "Description of idea 5...",
+    },
+  ];
+
+  return (
+    <div>
+      <h1>Ideas</h1>
+      {ideas.map((idea) => (
+        <div key={idea.nick}>
+          <h2>{idea.name}</h2>
+          <p>{idea.description}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
