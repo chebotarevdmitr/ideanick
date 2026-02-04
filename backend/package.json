@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "publisher": "Dmitriy",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --import ts-node/register/esm src/index.ts",
+    "start": "node --import ts-node/register/esm src/index.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
