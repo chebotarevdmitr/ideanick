@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "start": "node --import ts-node/esm src/index.ts",
-    "build": "tsc --build ./tsconfig.json"
+    "build": "rimraf ./dist && tsc --build ./tsconfig.json",
+    "start": "tsx src/index.ts"
   },
   "devDependencies": {
+    "rimraf": "^6.1.2",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "tsx": "^4.21.0",
+    "tsx": "^4.19.1",
     "typescript": "^5.9.3"
   }
 }
